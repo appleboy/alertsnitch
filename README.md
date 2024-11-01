@@ -4,12 +4,12 @@ Captures Prometheus AlertManager alerts and writes them in a MySQL or
 Postgres database for future examination.
 
 Because given a noisy enough alerting environment, offline querying
-capabilities of triggered alerts is extremely valuable.
+capabilities of triggered alerts are extremely valuable.
 
 ## How does it work
 
 1. You stand up one of these however you like (multi-arch Docker images provided)
-1. You setup AlertManager to point at it and propagate your alerts in.
+1. You set up AlertManager to point at it and propagate your alerts.
 1. Every alert that gets triggered reaches your database.
 1. Profit.
 
@@ -37,7 +37,7 @@ go get gitlab.com/yakshaving.art/alertsnitch
 
 To run AlertSnitch requires a MySQL or Postgres database to write to.
 
-The database must be initialized with AlertSnitch model.
+The database must be initialized with the AlertSnitch model.
 
 AlertSnitch will not go online until the model is up to date with the
 expected one. Bootstrapping scripts are provided in the [scripts][./script.d]
