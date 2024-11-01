@@ -30,7 +30,7 @@ graph TD
 Simply install to your $GOPATH using your GO tools
 
 ```sh
-$ go get gitlab.com/yakshaving.art/alertsnitch`
+go get gitlab.com/yakshaving.art/alertsnitch
 ```
 
 ## Requirements
@@ -39,7 +39,7 @@ To run AlertSnitch requires a MySQL or Postgres database to write to.
 
 The database must be initialized with AlertSnitch model.
 
-AlertSnitch will not become online until the model is up to date with the
+AlertSnitch will not go online until the model is up to date with the
 expected one. Bootstrapping scripts are provided in the [scripts][./script.d]
 folder.
 
@@ -126,10 +126,10 @@ route:
 AlertSnitch offers a `/-/ready` endpoint which will return 200 if the
 application is ready to accept WebHook posts.
 
-During startup AlertSnitch will probe the MySQL database and the database
+During startup, AlertSnitch will probe the MySQL database and the database
 model version. If everything is as expected it will set itself as ready.
 
-In case of failure it will return a 500 and will write the error in the
+In case of failure, it will return a 500 and will write the error in the
 response payload.
 
 ### Liveliness probe
@@ -137,7 +137,7 @@ response payload.
 AlertSnitch offers a `/-/health` endpoint which will return 200 as long as
 the MySQL/Postgres database is reachable.
 
-In case of error it will return a 500 and will write the error in the
+In case of error, it will return a 500 and will write the error in the
 response payload.
 
 ### Metrics
